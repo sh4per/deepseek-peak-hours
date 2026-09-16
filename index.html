@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>DeepSeek peak hours</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <main class="card" data-state="off-peak">
+      <header class="head">
+        <p class="state" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="state-word">&mdash;</span>
+        </p>
+        <p class="countdown" id="countdown">&mdash;</p>
+        <p class="detail" id="detail">&mdash;</p>
+      </header>
+
+      <section class="strip" id="strip" role="img" aria-label="Peak hours over the next 48 hours">
+        <div class="days" id="days"></div>
+        <div class="track">
+          <div class="bands" id="bands"></div>
+          <div class="now" id="now">
+            <span class="now-line" aria-hidden="true"></span>
+            <span class="now-dot" aria-hidden="true"></span>
+          </div>
+          <span class="now-label" id="now-label"></span>
+        </div>
+        <div class="ruler" id="ruler"></div>
+      </section>
+
+      <footer class="rule">
+        <p class="rule-head">
+          DeepSeek rule
+          <span class="chip" id="zone">&mdash;</span>
+        </p>
+        <dl class="rule-grid">
+          <dt>Peak in UTC</dt>
+          <dd id="rule-utc">&mdash;</dd>
+          <dt>Peak locally</dt>
+          <dd id="rule-local">&mdash;</dd>
+        </dl>
+        <p class="note">
+          Off-peak is half the peak rate.
+          <a href="https://api-docs.deepseek.com/quick_start/pricing" rel="noreferrer">Pricing docs</a>
+        </p>
+      </footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
