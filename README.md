@@ -60,7 +60,7 @@ UTC offset are always shown, so a wrong zone is visible rather than silent.
 
 ## The image
 
-`busybox` serving four static files — **6.2 MB**, no build stage.
+`busybox` serving six static files — **6.2 MB**, no build stage.
 
 - PID 1 is `docker-entrypoint.sh`, which forwards SIGTERM/SIGINT to httpd. Linux gives PID 1 no
   default signal actions, and busybox httpd installs no handler, so without the forwarder
@@ -69,7 +69,9 @@ UTC offset are always shown, so a wrong zone is visible rather than silent.
 - runs as `nobody`; `HEALTHCHECK` uses the same binary's `wget`
 - 48-hour graphic and countdown are pure client-side; the server never sees a clock
 - caching: `ETag` revalidation works (`304`); busybox ignores `If-Modified-Since`, and there is
-  no gzip — irrelevant for ~22 KB of assets
+  no gzip — irrelevant for ~25 KB of assets
+- the tab icon is `favicon.svg` (wave split, orange peak over green off-peak) with a PNG entry
+  for browsers that ignore SVG favicons. Original artwork, not DeepSeek's whale
 
 ## Tests
 

@@ -1,6 +1,6 @@
 FROM busybox:1.37
 
-COPY index.html app.css app.js schedule.js /www/
+COPY index.html app.css app.js schedule.js favicon.svg favicon-32.png /www/
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 EXPOSE 8080
